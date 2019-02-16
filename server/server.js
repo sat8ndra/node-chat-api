@@ -39,7 +39,7 @@ io.on('connection', (socket) => {
     // socket.emit
 
     // socket.emit from Admin text Welcome to the chat app
-    socket.emit('newMessage', generateMessage('Admin', 'Welcome to the chat app'));
+    socket.emit('newMessage', generateMessage('Admin', `Welcome to the room of ${params.room} in chat app.`));
 
     // socket.broadcast.emit from Admin text New user joined
     socket.broadcast.to(params.room).emit('newMessage', generateMessage('Admin', `${params.name} has joined.`));
